@@ -10,23 +10,29 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-offset-4 col-md-4">
+			<div class="col-md-offset-3 col-md-5">
+				<h1>API Dolar</h1>
+				<form action="" id="form">
+					<!-- valores y boton en pesos chilenos -->
+					<input type="number" id="valor_cl">
+					<input type="submit" id="convertir_cl" value="Pesos Chilenos a Dolar y Euros"></br>
+					<!-- valores y boton en dolares -->
+					<input type="number" id="valor_usd">
+					<input type="submit" id="convertir_usd" value="Dólares a Peso Chileno">
+
+				</form>
 				<table class="table table-striped">
 					<tr>
 						<td>Dolar</td>
-						<td id="dolar"></td>
+						<td id="dolartext"></td>
 					</tr>
 					<tr>
 						<td>Euro</td>
-						<td id="euro"></td>
+						<td id="eurotext"></td>
 					</tr>
 					<tr>
-						<td>UF</td>
-						<td id="uf"></td>
-					</tr>
-					<tr>
-						<td>UTM</td>
-						<td id="utm"></td>
+						<td>Peso Chileno</td>
+						<td id="cltext"></td>
 					</tr>
 				</table>
 			</div>
