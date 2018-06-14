@@ -9,9 +9,12 @@ $(function(){
 			console.log(data);
 			var indicador = data;
 
+		$('#valor_cl').focus();
+
 		// MOSTRAR EL VALOR ACTUAL DE DOLAR Y EURO
 			$('#dolartext').text(indicador.dolar.valor);
 			$('#eurotext').text(indicador.euro.valor);
+			$('#cltext').text(1);
 
 		// VALORES DE DOLAR, EURO Y PESO EN VARIABLES 
 			var dolar = parseInt(indicador.dolar.valor);
@@ -20,8 +23,8 @@ $(function(){
 			var euro  = parseInt(indicador.euro.valor); 
 			console.log(euro);
 
-			var peso  = $('#cltext').text(1);
-			console.log(peso);
+			var peso  = 1;
+			// console.log(peso);
 
 		// BOTON DE FUNCION CONVERTIR PESOS CHILENOS A DOLAR Y EURO
 			$('#convertir_cl').on('click', function(event) {
@@ -44,11 +47,25 @@ $(function(){
 			$('#convertir_usd').on('click', function(event) {
 				event.preventDefault(event);
 
-				var valor_dolar_ingresado = $('#valor_dolar').val();
-				console.log(valor_chileno_ingresado);
+				peso = $('#valor_usd').val();
+				console.log(peso);
+
+				$('#cltext').text(peso * dolar)
 
 				
 			});
+
+			$('#remove').on('click', function(event){
+				event.preventDefault(event);
+
+				$('#valor_cl, #valor_usd').val('');
+				$('#dolartext').text(indicador.dolar.valor);
+				$('#eurotext').text(indicador.euro.valor);
+				$('#cltext').text(1);
+			})
+
+				
+				
 
 
 		});	
